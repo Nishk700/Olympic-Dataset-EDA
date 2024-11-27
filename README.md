@@ -4,7 +4,7 @@ Datasets
 
 [Download Dataset from Google Drive](https://drive.google.com/drive/folders/16Te0zG1W1oqAt9usAohhw4-GaSTNweC6?usp=drive_link)
 
-[View the interactive jupyter notebook file]  (https://nbviewer.org/github/Nishk700/Olympic-Dataset-EDA/blob/main/Olympics_dataset_EDA._1.ipynb)
+[View the interactive jupyter notebook file](https://nbviewer.org/github/Nishk700/Olympic-Dataset-EDA/blob/main/Olympics_dataset_EDA._1.ipynb)
 
 ### Analysis Using SQL 
 
@@ -49,12 +49,14 @@ Region: Country each athlete represented.
 ### 1. How many olympics games have been held?
 
 Select count(distinct games) as total_games 
+
 from olympic
 
 
 ### 2. List down all Olympics games held so far?
 
 SELECT distinct (games)
+
 FROM olympic
 
 ### 3. Mention the total no of nations who participated in each olympics game?
@@ -171,14 +173,14 @@ limit 5
 ### 14. List down total gold, silver and broze medals won by each country.
 
 SELECT noc,
-  
-    COUNT(CASE WHEN medal = 'Gold' THEN 1 END) AS total_gold,
-    COUNT(CASE WHEN medal = 'Silver' THEN 1 END) AS total_silver,
-    COUNT(CASE WHEN medal = 'Bronze' THEN 1 END) AS total_bronze,
-    COUNT(CASE WHEN medal IN ('Gold', 'Silver', 'Bronze') THEN 1 END) AS total_medals
+  COUNT(CASE WHEN medal = 'Gold' THEN 1 END) AS total_gold,
+  COUNT(CASE WHEN medal = 'Silver' THEN 1 END) AS total_silver,
+  COUNT(CASE WHEN medal = 'Bronze' THEN 1 END) AS total_bronze,
+  COUNT(CASE WHEN medal IN ('Gold', 'Silver', 'Bronze') THEN 1 END) AS total_medals
 FROM olympic
 group by noc
 ORDER BY total_medals DESC;
+
 
 ### 15. List down total gold, silver and broze medals won by each country corresponding to each olympic games.
 
