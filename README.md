@@ -172,7 +172,7 @@ limit 1
 ![Image 9](SQL%20SS/9.png)
 
 
-### 10. Find the Ratio of male and female athletes participated in all olympic games.
+### 10. Find the Ratio of male to female athletes participated in each olympic games.
 
 with cte1 as
 
