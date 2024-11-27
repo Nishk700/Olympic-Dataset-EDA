@@ -52,7 +52,7 @@ Select count(distinct games) as total_games
 
 from olympic
 
-(1.png)
+![Image 1](sql%20ss/1.png)
 
 ### 2. List down all Olympics games held so far?
 
