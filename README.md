@@ -60,6 +60,8 @@ SELECT distinct (games)
 
 FROM olympic
 
+![Image 2](SQL%20SS/2.png)
+
 ### 3. Mention the total no of nations who participated in each olympics game?
 
 SELECT games, count (distinct noc) FROM olympic
@@ -67,6 +69,8 @@ SELECT games, count (distinct noc) FROM olympic
 group by games
 
 order by games asc
+
+![Image 3](SQL%20SS/3.png)
 
 ### 4. Which year saw the highest and lowest no of countries participating in olympics?
 
@@ -78,6 +82,8 @@ order by total_countries desc
 
 Limit 1
 
+![Image 4-1](SQL%20SS/4-1.png)
+
 
 SELECT games, count (distinct noc) total_countries FROM olympic
 
@@ -87,6 +93,7 @@ order by total_countries asc
 
 Limit 1
 
+![Image 4-2](SQL%20SS/4-2.png)
 
 ### 5.  Which nation has participated in all of the olympic games?
 
@@ -104,7 +111,7 @@ HAVING COUNT(DISTINCT year) = (
     
 )
 
-
+![Image 5](SQL%20SS/5.png)
 
 ### 6. Identify the sport which was played in all summer olympics.
 
@@ -124,6 +131,8 @@ HAVING COUNT(DISTINCT year) = (
     
 )
 
+![Image 6](SQL%20SS/6.png)
+
 ### 7. Which Sports were just played only once in the olympics?
 
 SELECT sport
@@ -134,6 +143,7 @@ GROUP BY sport
 
 HAVING COUNT(DISTINCT year) = 1
 
+![Image 7](SQL%20SS/7.png)
 
 ### 8. Fetch the total no of sports played in each olympic games.
 
@@ -143,6 +153,7 @@ from olympic
 
 group by games
 
+![Image 8](SQL%20SS/8.png)
 
 ### 9. Fetch details of the oldest athletes to win a gold medal.
     
@@ -157,6 +168,8 @@ and medal = 'Gold'
 order by age desc
 
 limit 1
+
+![Image 9](SQL%20SS/9.png)
 
 
 ### 10. Find the Ratio of male and female athletes participated in all olympic games.
@@ -187,6 +200,8 @@ left join cte2
 
 on cte1.games = cte2.games
 
+![Image 10](SQL%20SS/10.png)
+
 ### 11. Fetch the top 5 athletes who have won the most gold medals.
     
 select distinct (name), medal, count (medal) over (partition by name) total
@@ -199,6 +214,8 @@ order by total desc
 
 limit 5
 
+![Image 11](SQL%20SS/11.png)
+
 ### 12. Fetch the top 5 athletes who have won the most medals (gold/silver/bronze).
 
 select distinct (name), count (medal) over (partition by name) total
@@ -208,6 +225,8 @@ from olympic
 order by total desc
 
 limit 5
+
+![Image 12](SQL%20SS/12.png)
 
 ### 13. Fetch the top 5 most successful countries in olympics. Success is defined by no of medals won.
 
@@ -222,6 +241,8 @@ on olympic.noc = noc_regions.noc
 order by total desc
 
 limit 5
+
+![Image 13](SQL%20SS/13.png)
 
 ### 14. List down total gold, silver and broze medals won by each country.
 
@@ -240,6 +261,8 @@ FROM olympic
 group by noc
 
 ORDER BY total_medals DESC;
+
+![Image 14](SQL%20SS/14.png)
 
 
 ### 15. List down total gold, silver and broze medals won by each country corresponding to each olympic games.
@@ -262,7 +285,7 @@ having COUNT(CASE WHEN medal IN ('Gold', 'Silver', 'Bronze') THEN 1 END) <> 0
 
 ORDER BY games desc,total_medals DESC
 
-
+![Image 15](SQL%20SS/15.png)
 
 ### 16. Identify which country won the most gold, most silver and most bronze medals in each olympic games.
 
@@ -364,6 +387,7 @@ and Rank_bronze = 1
 
 order by cte3.games desc
 
+![Image 16](SQL%20SS/16.png)
 
 ### 17.  Which countries have never won gold medal but have won silver/bronze medals?
 
@@ -394,6 +418,7 @@ where total_gold =0
 
 and total_silver >0 and total_bronze > 0 
 
+![Image 17](SQL%20SS/17.png)
 
 ### 18. In which top ten  Sport/event, Germany has won highest medals.
     
@@ -407,7 +432,7 @@ order by total_medals desc
 
 limit 10
 
-
+![Image 18](SQL%20SS/18.png)
 
 
 
